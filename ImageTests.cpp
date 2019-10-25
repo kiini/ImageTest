@@ -4,13 +4,13 @@
 using namespace ::testing;
 // for more details on gtest see here https://github.com/google/googletest/blob/master/googletest/docs/primer.md
 // my lecture https://nccastaff.bournemouth.ac.uk/jmacey/PP/slides/testing/slides.html#/
-TEST(Image, defaultCtor)
+TEST(Image,defaultCtor)
 {
     Image i;
     EXPECT_EQ(i.width(),0);
     EXPECT_EQ(i.height(),0);
     EXPECT_EQ(i.channels(),3);
-    EXPECT_EQ(i.pixels(),nullptr);
+    EXPECT_NE(i.pixels(),nullptr);
 }
 
 
@@ -24,7 +24,7 @@ TEST(Image,userCtor)
 }
 
 
-TEST(Image, setPixel)
+TEST(Image,setPixel)
 {
     Image i(100,100);
     i.setPixel(0,0,255,0,0); // set first pixel to red

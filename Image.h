@@ -25,7 +25,7 @@ private :
     unsigned int m_width=0;
     unsigned int m_height=0;
     unsigned int m_channels=3;
-    std::unique_ptr<unsigned char[]> m_pixels;
+    std::unique_ptr<unsigned char []> m_pixels;
 };
 
 #endif
