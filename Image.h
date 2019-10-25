@@ -3,6 +3,7 @@
 #define IMAGE_H
 
 #include <memory>
+
 class Image
 {
   public :

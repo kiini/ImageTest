@@ -22,7 +22,10 @@ m_pixels[index+2]=_b;
 
 void Image::getPixel(unsigned int _x, unsigned int _y, unsigned char &o_r, unsigned char &o_g, unsigned char &o_b)
 {
-
+    size_t index=0;
+    o_r=m_pixels[index];
+    o_g=m_pixels[index+1];
+    o_b=m_pixels[index+2];
 }
 
 unsigned char * Image::pixels()
