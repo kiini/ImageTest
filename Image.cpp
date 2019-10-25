@@ -9,6 +9,22 @@ Image::Image(unsigned int _width, unsigned int _height, unsigned int _channels)
     m_pixels= std::make_unique<unsigned char []>(m_width);
 }
 
+
+void Image::setPixel(unsigned int _x, unsigned int _y, unsigned char _r, unsigned char _g, unsigned char _b)
+{
+// calculate index into array fir red then +1 g, +2 b
+size_t index=0;
+m_pixels[index]=_r;
+m_pixels[index+1]=_g;
+m_pixels[index+2]=_b;
+}
+
+
+void Image::getPixel(unsigned int _x, unsigned int _y, unsigned char &o_r, unsigned char &o_g, unsigned char &o_b)
+{
+
+}
+
 unsigned char * Image::pixels()
 {
     return m_pixels.get();
