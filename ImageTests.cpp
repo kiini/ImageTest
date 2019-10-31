@@ -10,7 +10,7 @@ TEST(Image,defaultCtor)
     EXPECT_EQ(i.width(),0);
     EXPECT_EQ(i.height(),0);
     EXPECT_EQ(i.channels(),3);
-    EXPECT_NE(i.pixels(),nullptr);
+    EXPECT_EQ(i.pixels(),nullptr);
 }
 
 
@@ -30,7 +30,32 @@ TEST(Image,setPixel)
     i.setPixel(0,0,255,0,0); // set first pixel to red
     unsigned char r,g,b;
     i.getPixel(0,0,r,g,b);
-    EXPECT_TRUE(r==225);
-    EXPECT_TRUE(g==0);
-    EXPECT_TRUE(b==0);
+    EXPECT_EQ(r,255);
+    EXPECT_EQ(g,0);
+    EXPECT_EQ(b,0);
+}
+
+TEST(Image,writeFile)
+{
+    Image i(100,100);
+    i.setPixel(0,0,255,0,0);
+    i.setPixel(1,0,0,255,0);
+    i.setPixel(2,0,0,0,255);
+    EXPECT_TRUE(i.write("test.png"));
+}
+
+TEST(Image,clearColour)
+{
+    Image i(100,100);
+    i.clearColour(200,200,255);
+    i.setPixel(0,0,255,0,0);
+    i.setPixel(1,0,0,255,0);
+    i.setPixel(2,0,0,0,255);
+    EXPECT_TRUE(i.write("test.png"));
+}
+
+
+TEST(Image,copyCtor)
+{
+
 }
