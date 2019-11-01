@@ -47,14 +47,14 @@ TEST(Image,writeFile)
 TEST(Image,clearColour)
 {
     Image i(100,100);
-    i.clearColour(200,200,255);
+    i.clearColour(255,0,255); // set colour as magenta
     i.setPixel(0,0,255,0,0);
     i.setPixel(1,0,0,255,0);
     i.setPixel(2,0,0,0,255);
     EXPECT_TRUE(i.write("test.png"));
 }
 
-/*
+
 TEST(Image,copyCtor)
 {
     Image i(100,100);
@@ -71,4 +71,4 @@ TEST(Image,copyCtor)
     EXPECT_EQ(g,0);
     EXPECT_EQ(b,0);
 }
-*/
+

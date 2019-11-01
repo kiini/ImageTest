@@ -10,7 +10,7 @@ class Image
     Image()=default;
     Image(unsigned int _width, unsigned int _height, unsigned int _channels=3);
     ~Image() noexcept =default;
-    Image(const Image &)=default;
+    Image(const Image &);
     Image & operator=(const Image &)=default;
     Image(Image &&)=default;
     Image & operator=(Image &&)=default;

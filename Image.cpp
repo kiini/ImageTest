@@ -11,7 +11,14 @@ Image::Image(unsigned int _width, unsigned int _height, unsigned int _channels)
     m_pixels= std::make_unique<unsigned char[]>(m_width*m_height*m_channels);
 }
 
-
+Image::Image(const Image &_c)
+{
+    m_width=_c.m_width;
+    m_height=_c.m_height;
+    m_channels=_c.m_channels;
+    m_pixels = std::make_unique<unsigned char[]>(m_width*m_height*m_channels);
+    memcpy(m_pixels.get(),_c.m_pixels.get(),m_width*m_height*m_channels);
+}
 
 void Image::setPixel(unsigned int _x, unsigned int _y, unsigned char _r, unsigned char _g, unsigned char _b)
 {
